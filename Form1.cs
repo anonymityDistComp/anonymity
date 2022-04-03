@@ -5,7 +5,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Windows.Forms;
 
-namespace Anonimity
+namespace Anonymity
 {
     public partial class Form1 : Form
     {
@@ -123,7 +123,7 @@ namespace Anonimity
             g.FillRectangle(panelBrush, data.dx, data.dy, 200, delta * 5);
             g.DrawString("Level: " + data.h.level, panelFont, fontBrush, data.dx, data.dy + delta * i++, panelFormat);
             g.DrawString("Weight: " + data.h.weight, panelFont, fontBrush, data.dx, data.dy + delta * i++, panelFormat);
-            g.DrawString("CumAnon: " + data.h.cumulativeAnonimity, panelFont, fontBrush, data.dx, data.dy + delta * i++, panelFormat);
+            g.DrawString("CumAnon: " + data.h.cumulativeAnonymity, panelFont, fontBrush, data.dx, data.dy + delta * i++, panelFormat);
             g.DrawString("Guesser: " + data.h.guesser, panelFont, fontBrush, data.dx, data.dy + delta * i++, panelFormat);
             g.DrawString("Cut: " + data.h.cut, panelFont, fontBrush, data.dx, data.dy + delta * i++, panelFormat);
         }
@@ -141,7 +141,7 @@ namespace Anonimity
             float innerRadius = radius * 0.8f;
             if (data.h.input == 0) g.DrawEllipse(blackPen, data.dx - innerRadius, data.dy - innerRadius, 2 * innerRadius, 2 * innerRadius);
             if (guess != -1) g.DrawString(guess == -1 ? "?" : guess.ToString(), font, fontBrush, data.dx, data.dy, stringFormat);
-            //g.DrawString(data.h.cumulativeAnonimity.ToString(), font, fontBrush, data.dx, data.dy, stringFormat);
+            //g.DrawString(data.h.cumulativeAnonymity.ToString(), font, fontBrush, data.dx, data.dy, stringFormat);
             //g.DrawString(data.h.weight.ToString(), font, fontBrush, data.dx, data.dy, stringFormat);
             if (data.h.level == -1 && count != -1) g.DrawString(count == -1 ? "?" : count.ToString(), font, fontBrush, data.dx, data.dy, stringFormat);
         }

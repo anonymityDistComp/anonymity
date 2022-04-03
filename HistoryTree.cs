@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Anonimity
+namespace Anonymity
 {
     public class HistoryTree
     {
@@ -11,13 +11,13 @@ namespace Anonimity
         public readonly int level = -1; // level in the history tree (equal to round number)
         public readonly int input = 0; // 0: leader
         public bool selected = true; // used to exclude some nodes from the tree
-        public int guess = -1; // estimated anonimity
+        public int guess = -1; // estimated anonymity
         public int deepest = -1; // level of deepest node used to obtain guess (only used in aggressive mode)
         public bool correct = false; // is guess known to be correct? (only used in careful mode)
         public int weight = 0; // number of guesses in subtree (only used in careful mode)
-        public int cumulativeAnonimity = 0; // anonimity coming from children (only used in careful mode)
+        public int cumulativeAnonymity = 0; // anonymity coming from children (only used in careful mode)
         public bool cut = false; // subtree hanging from node has a cut of correct nodes (only used in careful mode)
-        public bool guesser = false; // the anonimities of the node and all its children are known (only used in careful mode)
+        public bool guesser = false; // the anonymities of the node and all its children are known (only used in careful mode)
 
         public readonly HistoryTree parent;
         public readonly int siblingIndex; // index in parent's children list (needed only for drawing the tree)
@@ -151,7 +151,7 @@ namespace Anonimity
             {
                 int deep = GuessCarefully(false);
                 if (deep == -1) return -1;
-                return round >= deep + cumulativeAnonimity ? cumulativeAnonimity : -1;
+                return round >= deep + cumulativeAnonymity ? cumulativeAnonymity : -1;
             }
             else
             {
@@ -375,7 +375,7 @@ namespace Anonimity
                 data.SetGuess(level, false);
                 AddWeight(data, -1);
             }
-            guess = cumulativeAnonimity;
+            guess = cumulativeAnonymity;
             correct = true;
             cut = true;
             guesser = true;
@@ -403,15 +403,15 @@ namespace Anonimity
             HistoryTree h = parent;
             while (h != null)
             {
-                h.cumulativeAnonimity += guess - cumulativeAnonimity;
+                h.cumulativeAnonymity += guess - cumulativeAnonymity;
                 if (h.correct)
                 {
-                    if (h.guess == h.cumulativeAnonimity) h.CoverIsland(data);
+                    if (h.guess == h.cumulativeAnonymity) h.CoverIsland(data);
                     break;
                 }
                 h = h.parent;
             }
-            if (guess == cumulativeAnonimity) CoverIsland(data);
+            if (guess == cumulativeAnonymity) CoverIsland(data);
             return parent == null || parent.UpdateCuts();
         }
 
@@ -444,9 +444,9 @@ namespace Anonimity
         private int CutDepth(bool optimize)
         {
             System.Diagnostics.Debug.Assert(selected);
-            if (optimize && guess == cumulativeAnonimity) correct = true;
+            if (optimize && guess == cumulativeAnonymity) correct = true;
             if (correct) return level;
-            System.Diagnostics.Debug.Assert(cumulativeAnonimity != 0);
+            System.Diagnostics.Debug.Assert(cumulativeAnonymity != 0);
             int m = 0;
             foreach (var x in children)
                 if (x.selected) m = Math.Max(m, x.CutDepth(optimize));
@@ -459,7 +459,7 @@ namespace Anonimity
             bool cutFound = false;
             AuxData data = new AuxData(this);
             for (int i = 0; i < data.n; i++)
-                if (data.l[i][0].SetCorrect(data, 1)) cutFound = true; // set leader nodes' anonimities
+                if (data.l[i][0].SetCorrect(data, 1)) cutFound = true; // set leader nodes' anonymities
             while (!data.QueueEmpty())
             {
                 int j = data.GetNextLevel();
@@ -552,7 +552,7 @@ namespace Anonimity
             guesser = false;
             deepest = -1;
             weight = 0;
-            cumulativeAnonimity = 0;
+            cumulativeAnonymity = 0;
             int m = level;
             foreach (var h in children) m = Math.Max(m, h.ResetCounts(resetSelected));
             return selected ? m : 0;

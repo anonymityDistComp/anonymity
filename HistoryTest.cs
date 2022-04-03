@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Anonimity
+namespace Anonymity
 {
     static class HistoryTest
     {
@@ -12,7 +12,7 @@ namespace Anonimity
             public int n; // number of agents
             public int round = 0;
             public List<Entity> e = new List<Entity>(); // entity representative of each group
-            public List<int> m = new List<int>(); // multiplicity of each group (less or equal to anonimity)
+            public List<int> m = new List<int>(); // multiplicity of each group (less or equal to anonymity)
 
             private readonly Random rand;
 

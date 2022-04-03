@@ -1,0 +1,10 @@
+c:\Dropbox\Projects\C#\Anonymity\bin\Debug\Anonymity.exe.config
+c:\Dropbox\Projects\C#\Anonymity\bin\Debug\Anonymity.exe
+c:\Dropbox\Projects\C#\Anonymity\bin\Debug\Anonymity.pdb
+c:\Dropbox\Projects\C#\Anonymity\obj\Debug\Anonymity.Properties.Resources.resources
+c:\Dropbox\Projects\C#\Anonymity\obj\Debug\Anonymity.csproj.GenerateResource.cache
+c:\Dropbox\Projects\C#\Anonymity\obj\Debug\Anonymity.csproj.CoreCompileInputs.cache
+c:\Dropbox\Projects\C#\Anonymity\obj\Debug\Anonymity.exe
+c:\Dropbox\Projects\C#\Anonymity\obj\Debug\Anonymity.pdb
+C:\Dropbox\Projects\C#\Anonymity\obj\Debug\Anonymity.csproj.AssemblyReference.cache
+C:\Dropbox\Projects\C#\Anonymity\obj\Debug\Anonymity.Form1.resources

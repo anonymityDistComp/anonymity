@@ -1,5 +1,5 @@
 ﻿
-namespace Anonimity
+namespace Anonymity
 {
     partial class Form1
     {
@@ -41,7 +41,7 @@ namespace Anonimity
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.ShowIcon = false;
-            this.Text = "Anonimity";
+            this.Text = "Anonymity";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);

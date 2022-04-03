@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Anonimity
+namespace Anonymity
 {
     public class Entity
     {

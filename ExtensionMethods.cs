@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows;
 
-namespace Anonimity
+namespace Anonymity
 {
     static class ExtensionMethods
     {
